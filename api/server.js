@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://sabihop56:Mypassword12@cluster0.vfwnugr.mongodb.net/ecommerce?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://sabihop56:NN4mINGTlnhyGPl7@cluster0.dzs7opb.mongodb.net/", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -57,6 +57,12 @@ const validateLoginInput = (req, res, next) => {
   
   next();
 };
+
+app.get('/', (req, res) => {
+  res.send('Welcome to the API');
+});
+
+
 
 // Registration endpoint
 app.post('/register', validateRegisterInput, async (req, res) => {
@@ -216,7 +222,7 @@ app.get('/history', async (req, res) => {
     res.status(500).json({ error: 'Server error while fetching history' });
   }})
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// // Start server
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
